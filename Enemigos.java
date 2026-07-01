@@ -11,8 +11,8 @@ class Multiple {
     private double rango;
     public Multiple (int X, int Y, int division){
         this.nombre = "Multiple";
-        this.vida = 100;
-        this.daño = 5;
+        this.vida = 3;
+        this.daño = 1;
         this.velocidad = 5;
         this.division = division;
         this.posicionX = X;
@@ -65,8 +65,8 @@ class rapidin {
     private String estado;
     private double rango;
     public rapidin (int X, int Y){
-        this.vida = 25;
-        this.daño = 2;
+        this.vida = 2;
+        this.daño = 1;
         this.velocidad = 9;
         this.posicionX = X;
         this.posicionY = Y;
@@ -113,8 +113,8 @@ class tanque {
     private double rango;
     public tanque (int X, int Y){
         this.nombre = "Tanque";
-        this.vida = 200;
-        this.daño = 10;
+        this.vida = 6;
+        this.daño = 1;
         this.velocidad = 2;
         this.posicionX = X;
         this.posicionY = Y;
