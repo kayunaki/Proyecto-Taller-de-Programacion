@@ -3,16 +3,18 @@ public class Tablero {
     private int filas;
     private int columnas;
     private char[][] matriz;
-    ///private Muro[] muros; otra clase
-    ////private Punto[] puntos; otra clase
-    ////private Poder[] poderes; otra clase
+    private Muro[] muros; otra clase
+    private Punto[] puntos; otra clase
+    //private Poder[] poderes; otra clase
 
+    
     public Tablero(int filas, int columnas) {
         this.filas = filas;
         this.columnas = columnas;
         this.matriz = new char[filas][columnas];
     }
 
+    
     public void generarTablero() {
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
@@ -21,7 +23,6 @@ public class Tablero {
         }
     }
 
-    // Coloca los muros del juego
     public void agregarMuros() {
         for (int i = 0; i < filas; i++) {
             matriz[i][0] = '#';
@@ -34,7 +35,6 @@ public class Tablero {
         }
     }
 
-    // Distribuye puntos en el mapa
     public void agregarPuntos() {
         for (int i = 1; i < filas - 1; i++) {
             for (int j = 1; j < columnas - 1; j++) {
