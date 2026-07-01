@@ -3,9 +3,9 @@ public class Tablero {
     public int filas;
     public int columnas;
     public char[][] matriz;
-    public Muro[] muros; otra clase
-    public Punto[] puntos; otra clase
-    //public Poder[] poderes; otra clase
+    public Muro[] muros; 
+    public Punto[] puntos; 
+    //public Poder[] poderes; 
 
     
     public Tablero(int filas, int columnas) {
