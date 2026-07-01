@@ -11,7 +11,7 @@ class Multiple {
     private double rango;
     public Multiple (int X, int Y, int division){
         this.nombre = "Multiple";
-        this.vida = 50;
+        this.vida = 100;
         this.daño = 5;
         this.velocidad = 5;
         this.division = division;
@@ -53,9 +53,8 @@ public String Estad0(){
 public int velocidad (){
     return this.velocidad;
 }
-public String getNombre(){
-    return this.nombre;
-}
+public int vida (){
+    return this.vida;
 }
 class rapidin {
     private int vida;
@@ -82,25 +81,26 @@ public void Estad0(int jugadorX, int jugadorY) {
             this.estado = "Calmao";
         }
     }
-public int verificarColision(int jugadorX, int jugadorY) {
+public int realidaño(int jugadorX, int jugadorY) {
         if (this.posicionX == jugadorX && this.posicionY == jugadorY) {
             return this.daño;
         }
         return 0;
     }
-    public void recibirDaño(int cantidad) { 
+    public void recidaño(int cantidad) { 
         this.vida -= cantidad; 
     }
-    public void setPosicion(int x, int y) { 
+    public void posicion(int x, int y) { 
         this.posicionX = x; this.posicionY = y; 
     }
-    public String getEstadoActual() { 
+    public String Estad0() { 
         return estado; 
     }
-    public int getVelocidad() { 
+    public int velocidad() { 
         return velocidad; 
-    }    
-}
+    }   
+    public int vida (){
+    return this.vida;
 }
 class tanque {
     private String nombre;
@@ -113,7 +113,7 @@ class tanque {
     private double rango;
     public tanque (int X, int Y){
         this.nombre = "Tanque";
-        this.vida = 100;
+        this.vida = 200;
         this.daño = 10;
         this.velocidad = 2;
         this.posicionX = X;
@@ -121,15 +121,8 @@ class tanque {
         this.estado = "Calmao";
         this.rango = 2.0;
     }
-     public void actualizarEstadoIA(int jugadorX, int jugadorY) {
-        double distancia = Math.sqrt(Math.pow(jugadorX - this.posicionX, 2) + Math.pow(jugadorY - this.posicionY, 2));
-        if (distancia <= this.rango) {
-            this.estado = "Enojao";
-        } else {
-            this.estado = "Calmao";
-        }
     }
-    public void actualizarEstado(int jugadorX, int jugadorY) {
+    public void Estad0(int jugadorX, int jugadorY) {
             double distancia = Math.sqrt(Math.pow((jugadorX - this.posicionX), 2) + Math.pow((jugadorY - this.posicionY), 2));
             if (distancia <= this.rango) {
                 this.estado = "Enojao";
@@ -152,13 +145,13 @@ class tanque {
             this.posicionX = x;
             this.posicionY = y;
         }
-        public String getEstado() { 
+        public String Estad0() { 
             return this.estado; 
         }
-        public int getVelocidad() { 
+        public int velocidad() { 
             return this.velocidad; 
         }
-        public int getVida() { 
-            return this.vida; 
-        }
+        public int vida (){
+        return this.vida;
+}
 }
