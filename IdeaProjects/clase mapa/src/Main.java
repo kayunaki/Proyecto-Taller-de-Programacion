@@ -1,10 +1,10 @@
 public class Tablero {
 
-    private int filas;
-    private int columnas;
-    private char[][] matriz;
-    private Muro[] muros; otra clase
-    private Punto[] puntos; otra clase
+    public int filas;
+    public int columnas;
+    public char[][] matriz;
+    public Muro[] muros; otra clase
+    public Punto[] puntos; otra clase
     //private Poder[] poderes; otra clase
 
     
