@@ -4,7 +4,7 @@ public class Jugador {
     public int columna;
     public int salud;
     public int puntaje;
-    public int velocidad;
+    public double velocidad;
     public boolean poderActivo;
 
     public Jugador(String nombre, int fila, int columna) {
@@ -13,7 +13,7 @@ public class Jugador {
         this.columna = columna;
         this.salud = 3;
         this.puntaje = 0;
-        this.velocidad = 1;
+        this.velocidad = 2;
         this.poderActivo = false;
     }
 
