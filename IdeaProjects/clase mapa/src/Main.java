@@ -5,7 +5,7 @@ public class Tablero {
     public char[][] matriz;
     public Muro[] muros; 
     public Punto[] puntos; 
-    //public Poder[] poderes; 
+    public Poder[] poderes; 
 
     
     public Tablero(int filas, int columnas) {
