@@ -123,21 +123,18 @@ class tanque {
         this.estado = "Calmao";
         this.rango = 2.0;
     }
-    }
     public void Estad0(int jugadorX, int jugadorY) {
             double distancia = Math.sqrt(Math.pow((jugadorX - this.posicionX), 2) + Math.pow((jugadorY - this.posicionY), 2));
             if (distancia <= this.rango) {
                 this.estado = "Enojao";
             } else {
                 this.estado = "Calmao";
-            }
         }
         public int realidaño(int jugadorX, int jugadorY) {
             if (this.posicionX == jugadorX && this.posicionY == jugadorY) {
                 return this.daño;
             } else {
                 return 0;
-            }
         }
         public void recidaño(int cantidad) {
             this.vida -= cantidad;
