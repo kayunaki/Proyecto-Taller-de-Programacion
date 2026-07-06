@@ -102,6 +102,7 @@ public int realidaño(int jugadorX, int jugadorY) {
     public int vida (){
     return this.vida;
 }
+}
 class tanque {
     private String nombre;
     private int vida;
