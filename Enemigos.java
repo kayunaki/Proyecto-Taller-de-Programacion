@@ -129,12 +129,14 @@ class tanque {
                 this.estado = "Enojao";
             } else {
                 this.estado = "Calmao";
+            }
         }
         public int realidaño(int jugadorX, int jugadorY) {
             if (this.posicionX == jugadorX && this.posicionY == jugadorY) {
                 return this.daño;
             } else {
                 return 0;
+            }
         }
         public void recidaño(int cantidad) {
             this.vida -= cantidad;
