@@ -56,6 +56,7 @@ public int velocidad (){
 public int vida (){
     return this.vida;
 }
+}
 class rapidin {
     private int vida;
     private int velocidad;
