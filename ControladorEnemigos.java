@@ -28,6 +28,19 @@ public class ControladorEnemigos {
     public void verificarColisiones() {
         int jugadorX = jugador.getPosicionX();
         int jugadorY = jugador.getPosicionY();
+        
+        List<Enemigo> nuevosEnemigos = new ArrayList<>();
+
+        for (Enemigo e : enemigos) {
+            int daño = e.realizarDaño(jugadorX, jugadorY);
+            if (daño > 0) {
+                jugador.recibirDaño(daño);
+            }
+        }
+    }
+    public void verificarColisiones() {
+        int jugadorX = jugador.getPosicionX();
+        int jugadorY = jugador.getPosicionY();
         for (Enemigo e : enemigos) {
             int daño = e.realizarDaño(jugadorX, jugadorY);
             if (daño > 0) {
