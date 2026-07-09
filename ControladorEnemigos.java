@@ -25,17 +25,14 @@ public class ControladorEnemigos {
             e.mover(anchoMapa, altoMapa);
         }
     }
-    public void verificarColisiones() {
-        int jugadorX = jugador.getPosicionX();
-        int jugadorY = jugador.getPosicionY();
-        
-        List<Enemigo> nuevosEnemigos = new ArrayList<>();
-
-        for (Enemigo e : enemigos) {
-            int daño = e.realizarDaño(jugadorX, jugadorY);
-            if (daño > 0) {
-                jugador.recibirDaño(daño);
+    public void registrarDañoAEnemigo(Enemigo e, int cantidad) {
+        if (e instanceof Multiple) {
+            Multiple clon = ((Multiple) e).recibirDañoYDividir(cantidad);
+            if (clon != null) {
+                this.agregarEnemigo(clon); 
             }
+        } else {
+            e.recibirDaño(cantidad);
         }
     }
     public void verificarColisiones() {
