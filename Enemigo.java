@@ -17,6 +17,7 @@ public abstract class Enemigo {
         this.posicionY = y;
         this.estado = "Calmao";
     }
+    public abstract void mover(int limiteAncho, int limiteAlto);
     public void calcularEstado(int jugadorX, int jugadorY) {
         double distancia = Math.sqrt(Math.pow(jugadorX - this.posicionX, 2) + Math.pow(jugadorY - this.posicionY, 2));
         if (distancia <= this.rango) {
