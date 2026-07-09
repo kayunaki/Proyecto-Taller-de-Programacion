@@ -12,4 +12,11 @@ public class Multiple extends Enemigo {
         }
         return null;
     }
+    public void mover(int limiteAncho, int limiteAlto) {
+        this.posicionX += this.velocidad;
+        this.posicionY += this.velocidad;
+        
+        if (this.posicionX > limiteAncho) this.posicionX = 0;
+        if (this.posicionY > limiteAlto) this.posicionY = 0;
+    }
 }
