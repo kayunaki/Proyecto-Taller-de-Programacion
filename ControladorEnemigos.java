@@ -10,7 +10,7 @@ public class ControladorEnemigos {
      public void generarEnemigosPorTamañoMapa(int anchoMapa, int altoMapa) {
         int areaTotal = anchoMapa * altoMapa;
         if (areaTotal > 400) { 
-        enemigos.add(new Espectro(1, altoMapa / 2, 1, 0));
+        enemigos.add(new Fantasma(1, altoMapa / 2, 1, 0));
         enemigos.add(new Rapidin(anchoMapa - 2, altoMapa - 2));
         enemigos.add(new Tanque(2, 2));
         enemigos.add(new Multiple(anchoMapa / 2, altoMapa - 2, 2));
