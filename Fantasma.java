@@ -10,3 +10,4 @@ public class Fantasma extends Enemigo {
             this.posicionX = 0;
     }
 }
+}
