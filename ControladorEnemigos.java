@@ -7,20 +7,22 @@ public class ControladorEnemigos {
         this.enemigos = new ArrayList<>();
         this.jugador = jugador;
     }
-    public void generarEnemigosPorTamañoMapa(int anchoMapa, int altoMapa) {
+     public void generarEnemigosPorTamañoMapa(int anchoMapa, int altoMapa) {
         int areaTotal = anchoMapa * altoMapa;
         if (areaTotal > 400) { 
-            enemigos.add(new Espectro(1, altoMapa / 2, 1, 0));
-            enemigos.add(new Rapidin(anchoMapa - 2, altoMapa - 2));
-        }
+        enemigos.add(new Espectro(1, altoMapa / 2, 1, 0));
+        enemigos.add(new Rapidin(anchoMapa - 2, altoMapa - 2));
+        enemigos.add(new Tanque(2, 2));
+        enemigos.add(new Multiple(anchoMapa / 2, altoMapa - 2, 2));
+    } else {
+        enemigos.add(new Tanque(2, 2));
+        enemigos.add(new Multiple(anchoMapa - 2, altoMapa - 2, 2));
     }
+     }
     public void moverEnemigos(int anchoMapa, int altoMapa) {
         generarMovimientos();
         for (Enemigo e : enemigos) {
-            if (e instanceof Espectro) {
-                ((Espectro) e).moverEnLinaRecta(anchoMapa, altoMapa);
-            } else {
-            }
+            e.mover(anchoMapa, altoMapa);
         }
     }
     public void verificarColisiones() {
