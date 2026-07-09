@@ -7,7 +7,7 @@ public class Tanque extends Enemigo {
         if (this.posicionX >= limiteAncho) {
             this.posicionX = limiteAncho;
             this.velocidad = -Math.abs(this.velocidad); 
-        } else if (this.posicionX <= 0) {
+        } else (this.posicionX <= 0) {
             this.posicionX = 0;
             this.velocidad = Math.abs(this.velocidad);
         }
