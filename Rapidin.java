@@ -8,3 +8,4 @@ public class Rapidin extends Enemigo {
             this.posicionX = 0;
         }
 }
+}
