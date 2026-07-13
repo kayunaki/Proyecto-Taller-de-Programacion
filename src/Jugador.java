@@ -130,7 +130,7 @@ public class Jugador {
         this.puntaje = puntaje;
     }
 
-    public int getVelocidad() {
+    public double getVelocidad() {
         return velocidad;
     }
 
