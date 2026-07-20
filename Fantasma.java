@@ -3,9 +3,12 @@ public class Fantasma extends Enemigo {
         super("Fantasma", 2, 4, 1, 0.0, x, y);
     }
    public void mover(int limiteAncho, int limiteAlto){
-        this.posicionX += this.velocidad;
+        this.posicionX += (int) this.velocidad;
         if (this.posicionX > limiteAncho){
             this.posicionX = 0;
-    }
+    } else {
+            (this.posicionX < 0){
+                this.posicionX = limiteAncho;
+            }
 }
 }
