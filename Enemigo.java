@@ -1,54 +1,39 @@
 public abstract class Enemigo {
-    protected String nombre;
-    protected int vida;
-    protected double velocidad;
-    protected int posicionX;
-    protected int posicionY;
+    protected String tipo;
+    protected int fila;
+    protected int columna;
     protected int daño;
-    protected String estado;
-    protected double rango;
-    public Enemigo(String nombre, int vida, double velocidad, int daño, double rango, int x, int y) {
-        this.nombre = nombre;
-        this.vida = vida;
-        this.velocidad = velocidad;
+    protected boolean activo;
+    public Enemigo(String tipo, int fila, int columna, int daño) {
+        this.tipo = tipo;
+        this.fila = fila;
+        this.columna = columna;
         this.daño = daño;
-        this.rango = rango;
-        this.posicionX = x;
-        this.posicionY = y;
-        this.estado = "Calmao";
+        this.activo = true;
     }
-    public abstract void mover(int limiteAncho, int limiteAlto);
-    public void calcularEstado(int jugadorX, int jugadorY) {
-        double distancia = Math.sqrt(Math.pow(jugadorX - this.posicionX, 2) + Math.pow(jugadorY - this.posicionY, 2));
-        if (distancia <= this.rango) {
-            this.estado = "Enojao";
-        } else {
-            this.estado = "Calmao";
-        }
+    public abstract void mover(Tablero tablero, Jugador jugador);
+    public void atacar(Jugador jugador) {
+        jugador.recibirDaño(this.daño);
     }
-    public int realizarDaño(int jugadorX, int jugadorY) {
-        if (this.posicionX == jugadorX && this.posicionY == jugadorY) {
-            return this.daño;
-        }
-        return 0;
+    public boolean verificarColision(Jugador jugador) {
+        return this.fila == jugador.fila && this.columna == jugador.columna;
     }
-    public void recibirDaño(int cantidad) {
-        this.vida -= cantidad;
+    public void mostrarEstado() {
+        System.out.println(tipo + " en posición (" + fila + "," + columna + ")");
     }
-    public void setPosicion(int x, int y) {
-        this.posicionX = x;
-        this.posicionY = y;
+    public int getFila() { 
+        return fila; 
     }
-    public String getEstado() { 
-        return this.estado;
+    public int getColumna() { 
+        return columna; 
     }
-    public double getVelocidad() { 
-        return this.velocidad;
+    public String getTipo() { 
+        return tipo; 
     }
-    public int getVida() { 
-        return this.vida;
+    public boolean isActivo() { 
+        return activo; 
     }
-    public String getNombre() { 
-        return this.nombre;
+    public void setActivo(boolean activo) { 
+        this.activo = activo; 
     }
 }
