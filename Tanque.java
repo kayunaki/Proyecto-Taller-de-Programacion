@@ -1,15 +1,21 @@
 public class Tanque extends Enemigo {
-    public Tanque(int x, int y) {
-        super("Tanque", 6, 2, 1, 2.0, x, y);
+    public Tanque(int fila, int columna) {
+        super("Tanque", fila, columna, 2);
     }
-    public void mover(int limiteAncho, int limiteAlto) {
-        this.posicionX += this.velocidad;
-        if (this.posicionX >= limiteAncho) {
-            this.posicionX = limiteAncho;
-            this.velocidad = -Math.abs(this.velocidad); 
-        } else (this.posicionX <= 0) {
-            this.posicionX = 0;
-            this.velocidad = Math.abs(this.velocidad);
+    @Override
+    public void mover(Tablero tablero, Jugador jugador) {
+        if (!activo) return;
+        int df = jugador.fila - fila;
+        int dc = jugador.columna - columna;
+        int nf = fila, nc = columna;
+        if (Math.abs(df) > Math.abs(dc)) {
+            if (df < 0) nf--; else if (df > 0) nf++;
+        } else {
+            if (dc < 0) nc--; else if (dc > 0) nc++;
+        }
+        if (tablero.esMovimientoValido(nf, nc)) {
+            fila = nf;
+            columna = nc;
         }
     }
 }
