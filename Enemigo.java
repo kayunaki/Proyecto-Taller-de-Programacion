@@ -1,13 +1,13 @@
 public abstract class Enemigo {
     protected String nombre;
     protected int vida;
-    protected int velocidad;
+    protected double velocidad;
     protected int posicionX;
     protected int posicionY;
     protected int daño;
     protected String estado;
     protected double rango;
-    public Enemigo(String nombre, int vida, int velocidad, int daño, double rango, int x, int y) {
+    public Enemigo(String nombre, int vida, double velocidad, int daño, double rango, int x, int y) {
         this.nombre = nombre;
         this.vida = vida;
         this.velocidad = velocidad;
@@ -42,7 +42,7 @@ public abstract class Enemigo {
     public String getEstado() { 
         return this.estado;
     }
-    public int getVelocidad() { 
+    public double getVelocidad() { 
         return this.velocidad;
     }
     public int getVida() { 
