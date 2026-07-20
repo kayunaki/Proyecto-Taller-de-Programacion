@@ -1,10 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 public class ControladorEnemigos {
-    private List<Enemigo> enemigos;
+    private List<Enemigos> enemigos;
+    private List<Enemigo> enemigosParaCrear;
     private Jugador jugador;
     public ControladorEnemigos(Jugador jugador) {
         this.enemigos = new ArrayList<>();
+        this.enemigosParaCrear = new ArrayList<>();
         this.jugador = jugador;
     }
      public void generarEnemigosPorTamañoMapa(int anchoMapa, int altoMapa) {
@@ -24,6 +26,10 @@ public class ControladorEnemigos {
         for (Enemigo e : enemigos) {
             e.mover(anchoMapa, altoMapa);
         }
+    }
+    if (!enemigosParaAgregar.isEmpty()) {
+        enemigos.addAll(enemigosParaAgregar);
+        enemigosParaAgregar.clear();
     }
     public void registrarDañoAEnemigo(Enemigo e, int cantidad) {
         if (e instanceof Multiple) {
@@ -51,7 +57,6 @@ public class ControladorEnemigos {
     public void generarMovimientos() {
         int jugadorX = jugador.getPosicionX();
         int jugadorY = jugador.getPosicionY();
-
         for (Enemigo e : enemigos) {
             e.calcularEstado(jugadorX, jugadorY);
         }
