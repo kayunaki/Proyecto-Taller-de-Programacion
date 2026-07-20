@@ -1,14 +1,30 @@
 public class Fantasma extends Enemigo {
-    public Fantasma(int x, int y, int dirX, int dirY) {
-        super("Fantasma", 2, 4, 1, 0.0, x, y);
+    public Fantasma(int fila, int columna) {
+        super("Fantasma", fila, columna, 1);
     }
-   public void mover(int limiteAncho, int limiteAlto){
-        this.posicionX += (int) this.velocidad;
-        if (this.posicionX > limiteAncho){
-            this.posicionX = 0;
-    } else {
-            (this.posicionX < 0){
-                this.posicionX = limiteAncho;
+    @Override
+    public void mover(Tablero tablero, Jugador jugador) {
+        if (!activo) return;
+        int nuevaFila = fila;
+        int nuevaColumna = columna;
+        int diferenciaFila = jugador.fila - fila;
+        int diferenciaColumna = jugador.columna - columna;
+        if (Math.abs(diferenciaFila) > Math.abs(diferenciaColumna)) {
+            if (diferenciaFila < 0) {
+                nuevaFila--;
+            } else if (diferenciaFila > 0) {
+                nuevaFila++;
             }
-}
+        } else {
+            if (diferenciaColumna < 0) {
+                nuevaColumna--;
+            } else if (diferenciaColumna > 0) {
+                nuevaColumna++;
+            }
+        }
+        if (tablero.esMovimientoValido(nuevaFila, nuevaColumna)) {
+            fila = nuevaFila;
+            columna = nuevaColumna;
+        }
+    }
 }
