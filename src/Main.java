@@ -45,21 +45,16 @@ public class Juego {
             switch (opcion) {
 
                 case "W":
-                    jugador.mover("ARRIBA");
-                    break;
-
+                    
                 case "S":
-                    jugador.mover("ABAJO");
-                    break;
-
+                    
                 case "A":
-                    jugador.mover("IZQUIERDA");
-                    break;
 
                 case "D":
-                    jugador.mover("DERECHA");
-                    break;
 
+                    jugador.mover(opcion);
+                    break;
+                    
                 default:
                     System.out.println("Movimiento inválido.");
             }
